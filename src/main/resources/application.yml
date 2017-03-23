@@ -3,3 +3,7 @@
 spring:
   jpa:
     generate-ddl: true
+    properties:
+      hibernate:
+        dialect_resolvers: org.cloudfoundry.samples.music.config.TeradataDialectResolver
+

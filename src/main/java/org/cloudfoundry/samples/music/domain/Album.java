@@ -15,6 +15,7 @@ public class Album {
     @GenericGenerator(name="randomId", strategy="org.cloudfoundry.samples.music.domain.RandomIdGenerator")
     private String id;
 
+    @Column(name = "title_")
     private String title;
     private String artist;
     private String releaseYear;

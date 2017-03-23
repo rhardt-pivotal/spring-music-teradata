@@ -8,6 +8,9 @@ buildscript {
         jcenter()
         mavenCentral()
         maven { url "https://repo.spring.io/plugins-release" }
+        flatDir {
+            dirs 'lib'
+        }
     }
 
     dependencies {
@@ -24,8 +27,8 @@ apply plugin: 'spring-boot'
 
 version = '1.0'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -45,6 +48,9 @@ dependencies {
     compile "org.springframework.cloud:spring-cloud-core:${springCloudConnectorsVersion}"
     compile "org.springframework.cloud:spring-cloud-spring-service-connector:${springCloudConnectorsVersion}"
     compile "org.springframework.cloud:spring-cloud-cloudfoundry-connector:${springCloudConnectorsVersion}"
+    compile files("lib/spring-cloud-connector-teradata-1.0-SNAPSHOT.jar")
+    compile files("lib/tdgssconfig.jar")
+    compile files("lib/terajdbc4.jar")
 
     // JPA Persistence
     compile "commons-dbcp:commons-dbcp"

@@ -1,5 +1,6 @@
 package org.cloudfoundry.samples.music.config;
 
+import io.pivotal.fe.cloud.cloudfoundry.TeradataServiceInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.cloud.Cloud;
@@ -35,6 +36,7 @@ public class SpringApplicationContextInitializer implements ApplicationContextIn
         serviceTypeToProfileName.put(RedisServiceInfo.class, "redis");
         serviceTypeToProfileName.put(OracleServiceInfo.class, "oracle");
         serviceTypeToProfileName.put(SqlServerServiceInfo.class, "sqlserver");
+        serviceTypeToProfileName.put(TeradataServiceInfo.class, "teradata");
     }
 
     @Override
